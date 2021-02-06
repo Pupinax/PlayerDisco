@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+/*SLIDER volume*/
+
+.middle {
+	width: 50%;
+	max-width: 100px;
+}
+.slider-container {
+	position: relative;
+	top: -23px;
+	left: 208px;
+}
+.slider-container .bar {
+	position: absolute;
+	z-index: 1;
+	left: 2px;
+	top: 7px;
+	width: 100%;
+	height: 8px;
+	border-radius: 5px;
+	background-color: #CCC;
+	overflow: hidden;
+}
+.slider-container .bar .fill {
+	display: block;
+	width: 0;
+	height: 100%;
+	background-color: #6200ee;
+}
+.slider-container .slider {
+	position: relative;
+	z-index: 2;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	outline: none;
+	background-color: transparent;
+}
+.slider-container .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 10px;
+	height: 18px;
+	border-radius: 100%;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 0 0 0 rgba(98, 0, 238, 0.1);
+	transition: 0.3s ease-in-out;
+}
+
+
+/*Disco*/
+
+.overallcontain{
+	height:645px;
+	width:1350px;
+	width:100%;
+	background-color:#ffe0e0;
+}
+.mainbox{
+	top:300px;
+	height:100px;
+	width:410px;
+	background-color:#fff;
+	position:absolute;
+	z-index:10;
+	left:400px;
+	box-shadow:0 15px 20px rgba(0, 0, 0, 0.3);
+	border-radius:25px;
+}
+.roundbox{
+	position:absolute;
+	z-index:15;
+	left:25px;
+	height:135px;
+	width:135px;
+	background-color:#6200ee;
+	border-radius:360px;
+	top:-50px;
+	box-shadow:0 5px 25px rgba(0, 0, 0, 0.3);
+}
+.roundbox img{
+	width:135px;
+	height:135px;
+	border-radius:90px;
+	-webkit-animation:r1 6s linear infinite;
+	animation:r1 6s linear infinite; 
+}
+@keyframes r1{
+	0%{transform:rotate(-360deg)};
+	10%{transform:rotate(0deg)};
+}
+
+
+/*small hole at image box*/
+.smallbox{
+	position:absolute;
+	z-index:17;
+	left:50px;
+	top:50px;
+	height:35px;
+	width:35px;
+	background-color:#fff4f4;
+	border-radius:360px;
+}
+.button{
+	height:70px;
+	width:220px;
+	position:absolute;
+	z-index:17;
+	top:70px;
+	left:300px;
+}
+.button a{
+	margin:0px;
+	height:70px;
+	width:70px;
+	border-radius:15px;
+	cursor:pointer;
+	border:none;
+	font-size:30px;
+	text-align: center;
+	display: inline-block;
+	overflow:hidden;
+}
+#playButton{
+	background-image:url(icon/icons8-play-50.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	height:60px;
+	width:60px;
+	border-radius:90px;
+	cursor:pointer;
+	border:none;
+}
+#playButton:active{
+	position:relative;
+	top:2px;
+}
+#muteButton{
+	background-image:url(icon/icons8-voice-filled-15.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	height:20px;
+	width:20px;
+	border-radius:5px;
+	cursor:pointer;
+	border:none;
+	background-color:#fff;
+	margin-top:38px;
+	margin-left:180px;
+}
+
+
+
+/**/
+
+

@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Music</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+
+<body>
+
+<!--main visible-box and buttom-->
+<div class="overallcontain">
+
+    <!--audio file-->
+    <audio id="myTrack">
+    	<source src="ACDC - Back In Black (Official Video).mp3" type="audio/mp3"/>
+    </audio>
+    
+    <div class="mainbox">
+    
+    	<div class="roundbox">
+        	<img src="icon/photo.jpg">
+          
+        	<div class="smallbox"></div>
+           
+            <div class="button">
+
+            <button type="button" id="playButton"></button>
+
+            </div>
+            
+         </div>
+         	<!--mute or volume btn-->
+         	<button type="button" id="muteButton"></button>
+
+                <div class="middle">
+
+                    <div class="slider-container">
+
+                        <span class="bar"><span class="fill"></span></span>
+
+                            <input id="volumeslider" class="slider" type="range" min="0" max="100" value="100" step="1" onchange="adjustVolume()" />
+
+                </div>
+
+            </div>
+
+    </div>
+    
+</div>
+
+
+<script>
+
+// JavaScript Document
+
+var mytrack = document.getElementById('myTrack');
+var playButton = document.getElementById('playButton');
+var muteButton = document.getElementById('muteButton');
+var volumeslider = document.getElementById('volumeslider')
+
+
+playButton.addEventListener('click',playOrPause, false);
+muteButton.addEventListener('click',muteOrUnmute, false);
+
+
+
+
+//play/pause btn with style
+
+function playOrPause(){
+    if(!mytrack.paused && !mytrack.ended){
+        mytrack.pause();
+        
+        playButton.style.backgroundImage = 'url(icon/icons8-play-50.png)';
+    }
+    else{
+        mytrack.play();
+        
+        playButton.style.backgroundImage = 'url(icon/icons8-pause-50.png)';
+    }
+}
+
+
+
+//Mute btn JS
+
+function muteOrUnmute(){
+    if(mytrack.muted == true){
+        mytrack.muted = false;
+        
+        muteButton.style.backgroundImage = 'url(icon/icons8-voice-filled-15.png)';
+    }
+    else{
+        mytrack.muted = true;
+        
+        muteButton.style.backgroundImage = 'url(icon/icons8-mute-filled-15.png)';
+    }
+}
+
+function adjustVolume(){
+    mytrack.volume = volumeslider.value / 100;
+}
+
+
+//Slider backgroundcolor
+
+var $slider = $("#volumeslider");
+var $fill = $(".bar .fill");
+
+function setBar() {
+	$fill.css("width", $slider.val() + "%");
+}
+
+$slider.on("input", setBar);
+
+setBar();
+</script>
+
+</body>
+</html>
